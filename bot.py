@@ -2,6 +2,7 @@ import coc
 import creds
 import traceback
 
+
 from database.database import BotDatabase
 from discord.ext import commands
 
@@ -12,7 +13,7 @@ coc_dev_email = "beyondboyplays@gmail.com"  # Clash of Clans Developer Account e
 coc_dev_password = "Munna345"  # Clash of Clans Developer Account password
 
 # DISCORD DEVELOPER
-discord_bot_token = "ODQyMjY4Mjg4ODk3Nzc3Njg0.YJy1eA.vWdDRME5LMX21zDRf20o2SWH61w"  # 59 character Bot Token from your Discord App
+discord_bot_token = "ODQyMjY4Mjg4ODk3Nzc3Njg0.YJy1eA.m5b1PPqgR7rFsSV3EiqpsiUoDhA"  # 59 character Bot Token from your Discord App
 
 # This is where you can select the prefix you'd like used for your bot commands
 prefix = "!"
