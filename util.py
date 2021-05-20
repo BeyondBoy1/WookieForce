@@ -1,4 +1,12 @@
+from openpyxl import load_workbook
+import openpyxl
 import wookieforce
+
+#Load an existing workbook to manipulate
+workbook_object = openpyxl.load_workbook('ALPHAcwlBUILD.xlsm')
+
+#Create a new worksheet object and call in 'Filtered data
+worksheet_object1 = workbook_object.create_sheet('fullrosterCWLrole')
 
 '''
 All clans, All names, TH, Current location.
@@ -13,6 +21,32 @@ async def get_full_roster(client):
 		roster.update([(clan_name, members)])
 	return roster
 
+'''
+Testing workbook
+'''
+#load workbook
+ALPHAcwlBUILD = load_workbook(filename = 'ALPHAcwlBUILD.xlsm')
+
+
+#get sheet
+#roster = 'ALPHAcwlBUILD.xlsm'.active
+
+#create sheet
+clanroster = ALPHAcwlBUILD.create_sheet("clanroster")
+clanroster.title = "clanroster"
+#so ^ now we have a sheet called clanroster... need to write to it
+
+#get clan data
+
+'''
+Get all Clan War League Leagues 
+'''
+# async def get_clans(client,clan):
+# 	clans = []
+# 	clan = await client.get_clan('tag')
+# 	#get the clan league based on the tag
+# 	#append to clans[]
+# 	#return clan
 
 '''
 Get all Clan Members for a given clan
@@ -45,5 +79,7 @@ async def build_roster_table(client,roster):
 	return roster_data
 
 
+#Save the manipulated workbook
+workbook_object.save('fullroster.xlsx')
 
 
