@@ -3,7 +3,7 @@ import openpyxl
 import wookieforce
 
 #Load an existing workbook to manipulate
-workbook_object = openpyxl.load_workbook('ALPHAcwlBUILD.xlsm')
+workbook_object = openpyxl.load_workbook('newestCWLfileLATEST.xlsx')
 
 #Create a new worksheet object and call in 'Filtered data
 worksheet_object1 = workbook_object.create_sheet('fullrosterCWLrole')
@@ -25,7 +25,7 @@ async def get_full_roster(client):
 Testing workbook
 '''
 #load workbook
-ALPHAcwlBUILD = load_workbook(filename = 'ALPHAcwlBUILD.xlsm')
+ALPHAcwlBUILD = load_workbook(filename = 'newestCWLfileLATEST.xlsx')
 
 
 #get sheet
@@ -80,6 +80,6 @@ async def build_roster_table(client,roster):
 
 
 #Save the manipulated workbook
-workbook_object.save('fullroster.xlsx')
+workbook_object.save('newestCWLfileLATEST.xlsx')
 
 
