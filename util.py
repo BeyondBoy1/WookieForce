@@ -29,7 +29,6 @@ async def get_members(client,clan):
 	members = []
 	async for member in clan.get_detailed_members():
 		members.append(member)
-		print('Member:',member)
 	return members
 
 
