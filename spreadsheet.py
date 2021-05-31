@@ -3,7 +3,7 @@ import util
 import io 
 
 coc_dev_email = "beyondboyplays@gmail.com"  # Clash of Clans Developer Account email
-coc_dev_password = "Munna370"  # Clash of Clans Developer Account password
+coc_dev_password = "####"  # Clash of Clans Developer Account password
 fname="fullroster.csv"
 
 async def main():
