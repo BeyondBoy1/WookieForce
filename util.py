@@ -1,4 +1,5 @@
 import wookieforce
+
 '''
 All clans, All names, TH, Current location.
 '''
@@ -7,10 +8,11 @@ async def get_full_roster(client):
 	clans = wookieforce.all_clans()
 	for clan_name in clans:
 		clan = await client.get_clan(clans[clan_name])
-		print('Clan Name:',clan)
 		members = await get_members(client,clan)
 		roster.update([(clan_name, members)])
 	return roster
+print('Clans Searching Done')
+	
 
 '''
 Get all Clan War League Leagues 
@@ -49,5 +51,7 @@ async def build_roster_table(client,roster):
 			roster_data += str(player.league) + ','
 			roster_data += str(player.clan) + '\n'
 			#TEST
-
 	return roster_data
+print('Clan Roster Built')
+	
+	

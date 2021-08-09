@@ -1,49 +1,90 @@
-import tkinter as tk
-from tkinter import *
-from tkinter import ttk
+from logging import root
+from subprocess import run
 import time
+import tkinter as tk
+import tkinter as ttk
 import threading
-from PIL import ImageTk, Image, PyAccess
+from tkinter import *
 from tkinter import filedialog
+import tkinter.scrolledtext as st
+from tkinter.constants import BOTH, BOTTOM
+from PIL import ImageTk, Image
 import os
+import subprocess
 
 splash =  tk.Tk()
 splash.title('Coc Analyzer')
 splash.geometry('800x500')
 
-bg = PhotoImage(file="D:\GUI Python\9thanniversary.png")
+bg = PhotoImage(file="D:\WookieForce\9thanniversary.png")
 
 my_label = Label(splash,image=bg)
 my_label.place(x=0,y=0,relheight=1,relwidth=1)
 
-def load():
-    #my_progress.start(10)
-    for x in range (7):
-        my_progress['value'] += 15
-        splash.update_idletasks()
-        time.sleep(1)
-
-s = ttk.Style()
-s.theme_use('clam')
-s.configure("pink.Horizontal.TProgressbar", troughcolor ='white', background='#ff00fe')
-my_progress= ttk.Progressbar(splash, style="pink.Horizontal.TProgressbar", orient="horizontal", length=200, mode="determinate")
-
-my_progress.pack(pady=210) 
-threading.Thread(target=load).start()
-
-   
 
 def menu():
+    global callback_id
     splash.destroy()
-    global filebutton
-    menu = Tk()
-    menu.title('Wookie Force')
-    menu.geometry('800x600')
 
-    menu.filename = filedialog.askopenfilename(initialdir="D:\WookieForce",title="Select a file")
+    menu = tk.Tk()
+    menu.title('Wookie Force')
+    menu.geometry('1200x600')
+
+
+    apps = []
     
+    def addApp():
+        filename = filedialog.askopenfilename(initialdir="/",title="Select file")
+        apps.append(filename)
+        for app in apps:
+            label = tk.Label(frame,text=app,bg="#bbe8fd")
+            label.pack()
+
+    # Create a photoimage object of the image in the path
+    image1 = Image.open("D:\WookieForce\menu.png")
+    test = ImageTk.PhotoImage(image1)
+
+    label1 = Label(image=test)
+    label1.image = test
+    canvas = tk.Canvas(menu,width=1200,height=600)
+
+    #Load the image
+    menubg= ImageTk.PhotoImage(file="D:\WookieForce\menu.png")
+    #Create a canvas
+    canvas= Canvas(menu,width= 400, height= 200)
+    canvas.pack(expand=True, fill= BOTH)
+    #Add the image in the canvas
+    canvas.create_image(0,0,image=menubg, anchor="nw")
+
+    #Position image
+    label1.place(x=0, y=0,relheight=1,relwidth=1)
+
+    canvas.pack()
     
-#Splash Timer
-splash.after(3000,menu)
+    frame = Frame(menu,bg="white")
+    frame.place(relwidth=0.6,relheight=0.6,relx=0.2,rely=0.2)
+
+    files=[]
+
+    def openProgram():
+        filename = filedialog.askopenfilename(initialdir="/",title="Select file")
+        result = subprocess.check_output(['python',filename])
+        result = result.decode()
+        print(result)
+        label2 = tk.Label(frame,text=result,bg="#bbe8fd")
+        label2.pack()
+
+    openfile = tk.Button(canvas,text="Open file",padx=10,pady=5,command=addApp)
+    openfile.pack(side=BOTTOM, padx=0, pady=10)
+
+    runfile = tk.Button(canvas,text = "Run file",padx=10,pady=5,command=openProgram)
+    runfile.pack(side=BOTTOM, padx=0, pady=10)
+    
+    callback_id = canvas.after(1000, menu)
+
+button_img = PhotoImage(file="D:\WookieForce\Start.png")
+
+Start = tk.Button(splash,image =button_img,borderwidth=0,command = menu)
+Start.pack(side=BOTTOM, padx=0, pady=230)
 
 mainloop()

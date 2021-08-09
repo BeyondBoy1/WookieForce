@@ -4,7 +4,7 @@ Wookie Force is a Python library for dealing with Wookie Force data.
 
 ## Installation
 
-Use the package manager [pip](https://pip.pypa.io/en/stable/) to install foobar.
+Use the package manager [pip](https://pip.pypa.io/en/stable/) to install Wookie Force.
 
 ```bash
 pip install -r requirements.txt
