@@ -13,7 +13,7 @@ import os
 import subprocess
 
 splash =  tk.Tk()
-splash.title('Coc Analyzer')
+splash.title('Wookie Force')
 splash.geometry('800x500')
 
 bg = PhotoImage(file="D:\WookieForce\9thanniversary.png")
