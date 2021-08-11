@@ -16,7 +16,7 @@ splash =  tk.Tk()
 splash.title('Wookie Force')
 splash.geometry('800x500')
 
-bg = PhotoImage(file="D:\WookieForce\9thanniversary.png")
+bg = PhotoImage(file="9thanniversary.png")
 
 my_label = Label(splash,image=bg)
 my_label.place(x=0,y=0,relheight=1,relwidth=1)
@@ -41,7 +41,7 @@ def menu():
             label.pack()
 
     # Create a photoimage object of the image in the path
-    image1 = Image.open("D:\WookieForce\menu.png")
+    image1 = Image.open("menu.png")
     test = ImageTk.PhotoImage(image1)
 
     label1 = Label(image=test)
@@ -49,7 +49,7 @@ def menu():
     canvas = tk.Canvas(menu,width=1200,height=600)
 
     #Load the image
-    menubg= ImageTk.PhotoImage(file="D:\WookieForce\menu.png")
+    menubg= ImageTk.PhotoImage(file="menu.png")
     #Create a canvas
     canvas= Canvas(menu,width= 400, height= 200)
     canvas.pack(expand=True, fill= BOTH)
@@ -82,7 +82,7 @@ def menu():
     
     callback_id = canvas.after(1000, menu)
 
-button_img = PhotoImage(file="D:\WookieForce\Start.png")
+button_img = PhotoImage(file="Start.png")
 
 Start = tk.Button(splash,image =button_img,borderwidth=0,command = menu)
 Start.pack(side=BOTTOM, padx=0, pady=230)
