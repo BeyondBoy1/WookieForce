@@ -16,6 +16,7 @@ def all_clans():
 		'barudak sunda': 'RRJ02JGC',
 		'Sheer Force': 	'VUCVG2J0',
 		'UnitedAsOne': 	'YVPVGPP2',
+		'reqrecvnwar':  'J2PVJ2GU',
 	}'''
 	#TEST
 	return {
@@ -35,5 +36,6 @@ def all_clans():
 		'barudak sunda': 'RRJ02JGC',
 		'Sheer Force': 	'VUCVG2J0',
 		'UnitedAsOne': 	'YVPVGPP2',
+		'reqrecvnwar':  'J2PVJ2GU',
 	}
 	#TEST
