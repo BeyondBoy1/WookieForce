@@ -1,5 +1,8 @@
 # Wookie Force
 Wookie Force is a Python library for dealing with Wookie Force data.
+
+[![BeyondBoy's GitHub stats](https://github-readme-stats.vercel.app/api?username=beyondboy1)](https://github.com/anuraghazra/github-readme-stats)
+
 ![wookie](https://media.discordapp.net/attachments/834292311856250911/834877593664749598/6919521.jpg)
 ## Installation
 

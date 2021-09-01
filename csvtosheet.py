@@ -9,7 +9,7 @@ scope = ["https://spreadsheets.google.com/feeds", 'https://www.googleapis.com/au
 credentials = ServiceAccountCredentials.from_json_keyfile_name('service_account.json', scope)
 client = gspread.authorize(credentials)
 
-gc = gspread.service_account(filename='D:\WookieForce\service_account.json')
+gc = gspread.service_account(filename='service_account.json')
 
 def get_time():
     return strftime("%a, %d %b %Y %H:%M:%S", localtime())
