@@ -18,4 +18,3 @@ async def main():
 client = coc.login(coc_dev_email ,coc_dev_password)
 client.loop.run_until_complete(main())
 #client.close()
-
