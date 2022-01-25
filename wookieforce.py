@@ -5,7 +5,7 @@ def all_clans():
 		# 'Brute Force':'#22PQL2L0R',
 		# 'PBfPN':'#22QL8YUC8',
 		# 'Wookies':'#298092P99',
-		# 'Mini Matter':'#2PJYCQYV9',
+		'Mini Matter':'#2PJYCQYV9',
 		# 'Endor':'#2YLL8UVPY',
 		# 'Mos Eisley':'#2YUVPQQCU',
 		# 'Killer_Black_Wf':'#8VQYR2LR',
